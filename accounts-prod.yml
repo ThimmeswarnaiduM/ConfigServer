@@ -1,0 +1,8 @@
+build:
+  accounts:
+    message: "Hello, Welcome to EazyBytes Accounts related prod API's!"
+
+contact-details:
+  email: "Naidu@example.com"
+  name: "EazyBytes"
+  on-call-support: "1234567890"
