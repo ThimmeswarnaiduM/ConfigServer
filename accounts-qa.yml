@@ -1,7 +1,23 @@
+spring:
+  profiles:
+    active: "qa"
+
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts realted QA API'S!"
-ContactDetails:
-  email: "L1H5o@example.com"
-  name: "EazyBytes"
-  onCallSupport: "1234567890"
+    message: "Hello, Welcome to EazyBytes Accounts related QA API'S!"
+
+contactdetails:
+  email: "qa_support@example.com"
+  name: "EazyBytes QA Team"
+  onCallSupport: "9876543210"
+
+datasource:
+  url: jdbc:mysql://localhost:3306/microservice_final_qa
+  username: qa_user
+  password: qa_password
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
