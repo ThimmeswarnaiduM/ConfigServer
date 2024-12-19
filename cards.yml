@@ -4,7 +4,7 @@ spring:
       import-check:
         enabled: false  # Disable import check but still allow Cloud Config us
   application:
-    name: accounts
+    name: cards
   profiles:
     active: "qa"
 
