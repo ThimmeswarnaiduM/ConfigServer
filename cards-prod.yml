@@ -1,7 +1,13 @@
 build:
   cards:
-    message: "Hello, Welcome to EazyBytes cards realted Prod API'S!"
-ContactDetails:
+    accountproperties:
+  message: "Hello, Welcome to EazyBytes cards related Prod API'S!"
+  email: "support@eazybytes.com"
+  supportNumber: "1800-123-456"
+
+contactdetails:
   email: "L1H5o@example.com"
   name: "EazyBytes"
   onCallSupport: "1234567890"
+
+
