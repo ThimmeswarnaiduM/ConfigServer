@@ -13,7 +13,7 @@ spring:
 
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related devtools API's!"  # QA message
+    message: "Hello, Welcome to EazyBytes Accounts related Production API's!"  # QA message
 
 contactdetails:
   email: "dev_support@example.com"  # QA support email
