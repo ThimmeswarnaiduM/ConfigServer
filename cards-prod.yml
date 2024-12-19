@@ -13,7 +13,6 @@ spring:
 
 build:
   cards:
-   accountproperties:
   message: "Hello, Welcome to EazyBytes cards related dev API'S!"
 
 
