@@ -1,8 +1,23 @@
+spring:
+  profiles:
+    active: "prod"
+
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related prod API's!"
+    message: "Hello, Welcome to EazyBytes Accounts related Production API'S!"
 
-contact-details:
-  email: "Naidu@example.com"
-  name: "EazyBytes"
-  on-call-support: "1234567890"
+contactdetails:
+  email: "support@eazybytes.com"
+  name: "EazyBytes Support"
+  onCallSupport: "1234567890"
+
+datasource:
+  url: jdbc:mysql://localhost:3306/microservice_final_prod
+  username: prod_user
+  password: prod_password
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
