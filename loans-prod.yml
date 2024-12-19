@@ -15,7 +15,7 @@ spring:
 
 build:
   loans:
-    message: "Hello, Welcome to EazyBytes Loans related devtools API's!"  # QA message
+    message: "Hello, Welcome to EazyBytes Loans related production API's!"  # QA message
 
 contactdetails:
   email: "support@example.com"  # QA support email
