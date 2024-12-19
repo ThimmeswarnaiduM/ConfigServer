@@ -1,10 +1,9 @@
 spring:
   application:
     name: accounts
-  profiles:
-    active: "qa"
+  
   datasource:
-    url: jdbc:mysql://localhost:3306/microservice_final
+    url: jdbc:mysql://localhost:3306/microservice_final  # QA database URL
     username: root
     password: mysql
   jpa:
@@ -12,12 +11,17 @@ spring:
     properties:
       hibernate.dialect: org.hibernate.dialect.MySQLDialect
 
-
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related Default API's!"
-  contact-details:
-    email: "default_support@example.com"  # QA support email
-    name: "EazyBytes de Team"  # QA team name
-    onCallSupport: "9876543210"  # QA support number
+    message: "Hello, Welcome to EazyBytes Accounts related Default API's!"  # QA message
 
+contactdetails:
+  email: "support@example.com"  # QA support email
+  name: "EazyBytes Def Team"  # QA team name
+  onCallSupport: "9876543210"  # QA support number
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose all management endpoints
