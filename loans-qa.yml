@@ -1,20 +1,6 @@
-spring:
-  application:
-    name: Loans
-  datasource:
-    url: jdbc:mysql://localhost:3307/loansdb
-    username: root
-    password: root
-  jpa:
-    show-sql: true
-    properties:
-      hibernate.dialect:  org.hibernate.dialect.MySQLDialect
-    sql:
-      init-mode: always
-
 build:
-  Loans:
-    message: "Hello, Welcome to EazyBytes Accounts realted qa API'S!"
+  loans:
+    message: "Hello, Welcome to EazyBytes loans realted QA API'S!"
 ContactDetails:
   email: "L1H5o@example.com"
   name: "EazyBytes"
