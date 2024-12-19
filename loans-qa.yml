@@ -1,7 +1,29 @@
+
+
+spring:
+  application:
+    name: loans
+  
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservice_final  # QA database URL
+    username: root
+    password: mysql
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+
 build:
-  Loans:
-    message: "Hello, Welcome to EazyBytes loans realted QA API'S!"
-ContactDetails:
-  email: "L1H5o@example.com"
-  name: "EazyBytes"
-  onCallSupport: "1234567890"
+  loans:
+    message: "Hello, Welcome to EazyBytes Loans related QA API's!"  # QA message
+
+contactdetails:
+  email: "support@example.com"  # QA support email
+  name: "EazyBytes Def Team"  # QA team name
+  onCallSupport: "9876543210"  # QA support number
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose all management endpoints
