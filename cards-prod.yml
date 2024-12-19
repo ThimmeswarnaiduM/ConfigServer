@@ -1,7 +1,6 @@
-
 build:
   cards:
-    message: "Hello, Welcome to EazyBytes Accounts realted prod API'S!"
+    message: "Hello, Welcome to EazyBytes cards realted Prod API'S!"
 ContactDetails:
   email: "L1H5o@example.com"
   name: "EazyBytes"
