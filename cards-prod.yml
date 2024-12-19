@@ -13,7 +13,7 @@ spring:
 
 build:
   cards:
-   message: "Hello, Welcome to EazyBytes cards related dev API'S!"
+   message: "Hello, Welcome to EazyBytes cards related devtools API'S!"
 
 
 contactdetails:
