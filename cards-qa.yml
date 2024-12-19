@@ -12,7 +12,7 @@ spring:
       hibernate.dialect: org.hibernate.dialect.MySQLDialect
 
 build:
-  accounts:
+  cards:
     message: "Hello, Welcome to EazyBytes Accounts related QA API's!"  # QA message
 
 contactdetails:
