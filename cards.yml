@@ -1,13 +1,13 @@
 spring:
+
   cloud:
     config:
       import-check:
-        enabled: false  # Disable import check but still allow Cloud Config us
+        enabled: false  # Disable import check but still allow Cloud Config use
   application:
     name: cards
   profiles:
-    active: "qa"
-
+    active: "prod"
   config:
     import:
       - optional:configserver:http://localhost:8071/
@@ -18,11 +18,15 @@ spring:
   jpa:
     show-sql: true
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect  # Use MySQL8Dialect if MySQL 8.x is used
+    sql:
+      init-mode: always
+server:
+    port: 8081
 
 build:
-  accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related Default API'S!"
+  cards:
+    message: "Hello, Welcome to EazyBytes Accounts related prod API'S!"  # Fixed typo from "realted" to "related"
 
 ContactDetails:
   email: "L1H5o@example.com"
