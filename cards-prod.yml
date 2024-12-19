@@ -1,13 +1,27 @@
+spring:
+  application:
+    name: cards
+  
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservice_final_qa  # QA database URL
+    username: dev_user  # QA username
+    password: dev_password  # QA password
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+
 build:
-  cards:
-    accountproperties:
-  message: "Hello, Welcome to EazyBytes cards related Prod API'S!"
-  email: "support@eazybytes.com"
-  supportNumber: "1800-123-456"
+  accounts:
+    message: "Hello, Welcome to EazyBytes Accounts related DEV API's!"  # QA message
 
 contactdetails:
-  email: "L1H5o@example.com"
-  name: "EazyBytes"
-  onCallSupport: "1234567890"
+  email: "dev_support@example.com"  # QA support email
+  name: "EazyBytes DEV Team"  # QA team name
+  onCallSupport: "9876543210"  # QA support number
 
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose all management endpoints
