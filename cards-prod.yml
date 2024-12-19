@@ -3,9 +3,9 @@ spring:
     name: cards
   
   datasource:
-    url: jdbc:mysql://localhost:3306/microservice_final_qa  # QA database URL
-    username: dev_user  # QA username
-    password: dev_password  # QA password
+    url: jdbc:mysql://localhost:3306/microservice_final  # QA database URL
+    username: root # QA username
+    password: mysql  # QA password
   jpa:
     show-sql: true
     properties:
@@ -15,8 +15,7 @@ build:
   cards:
    accountproperties:
   message: "Hello, Welcome to EazyBytes cards related dev API'S!"
-  email: "support@eazybytes.com"
-  supportNumber: "1800-123-456"
+
 
 contactdetails:
   email: "dev_support@example.com"  # QA support email
