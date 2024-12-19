@@ -1,5 +1,5 @@
 build:
-  loans:
+  Loans:
     message: "Hello, Welcome to EazyBytes loans realted QA API'S!"
 ContactDetails:
   email: "L1H5o@example.com"
