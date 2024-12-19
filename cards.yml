@@ -25,8 +25,9 @@ server:
   port: 8081
 
 build:
-  cards:
-    message: "Hello, Welcome to EazyBytes Accounts related prod API'S!"  # Fixed typo from "realted" to "related"
+  accounts:
+    message: "Hello, Welcome to EazyBytes Accounts related Default API's!"
+
 
 ContactDetails:
   email: "L1H5o@example.com"
