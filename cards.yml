@@ -1,40 +1,27 @@
 spring:
-
-  cloud:
-    config:
-      import-check:
-        enabled: false  # Disable import check but still allow Cloud Config use
   application:
     name: cards
-  profiles:
-    active: "prod"
-  config:
-    import:
-      - optional:configserver:http://localhost:8071/
+  
   datasource:
-    url: jdbc:mysql://localhost:3306/microservice_final
+    url: jdbc:mysql://localhost:3306/microservice_final  # QA database URL
     username: root
     password: mysql
   jpa:
     show-sql: true
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect  # Use MySQL8Dialect if MySQL 8.x is used
-    sql:
-      init-mode: always
-server:
-  port: 8081
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
 
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related Default API's!"
+    message: "Hello, Welcome to EazyBytes Accounts related Default API's!"  # QA message
 
+contactdetails:
+  email: "support@example.com"  # QA support email
+  name: "EazyBytes Def Team"  # QA team name
+  onCallSupport: "9876543210"  # QA support number
 
-ContactDetails:
-  email: "L1H5o@example.com"
-  name: "EazyBytes"
-  onCallSupport: "1234567890"
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*"  # Expose all management endpoints
