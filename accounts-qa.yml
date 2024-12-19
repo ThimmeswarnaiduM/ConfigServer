@@ -1,8 +1,7 @@
 spring:
   application:
     name: accounts
-  profiles:
-    active: "qa"  # Activate QA profile
+  
   datasource:
     url: jdbc:mysql://localhost:3306/microservice_final_qa  # QA database URL
     username: qa_user  # QA username
