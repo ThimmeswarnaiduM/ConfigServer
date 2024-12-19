@@ -1,23 +1,23 @@
 spring:
   profiles:
-    active: "qa"
+    active: "qa"  # Activate QA profile
 
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related QA API'S!"
+    message: "Hello, Welcome to EazyBytes Accounts related QA API'S!"  # QA message
 
 contactdetails:
-  email: "qa_support@example.com"
-  name: "EazyBytes QA Team"
-  onCallSupport: "9876543210"
+  email: "qa_support@example.com"  # QA support email
+  name: "EazyBytes QA Team"  # QA team name
+  onCallSupport: "9876543210"  # QA support number
 
 datasource:
-  url: jdbc:mysql://localhost:3306/microservice_final_qa
-  username: qa_user
-  password: qa_password
+  url: jdbc:mysql://localhost:3306/microservice_final_qa  # QA database
+  username: qa_user  # QA user
+  password: qa_password  # QA password
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*"  # Expose all management endpoints
