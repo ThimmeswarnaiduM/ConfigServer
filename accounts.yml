@@ -3,9 +3,9 @@ spring:
     name: accounts
   
   datasource:
-    url: jdbc:mysql://localhost:3306/microservice_final  # QA database URL
+    url: jdbc:mysql://localhost:3306/accountsdb
     username: root
-    password: mysql
+    password: root
   jpa:
     show-sql: true
     properties:
