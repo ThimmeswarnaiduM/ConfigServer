@@ -1,11 +1,18 @@
 spring:
+  config:
+    import: optional:configserver:http://localhost:8071/  # Optional import from config server
+
   application:
     name: accounts
-  
+
+  profiles:
+    active: "default" # Corrected to activate the default profile
+
   datasource:
-    url: jdbc:mysql://localhost:3306/accountsdb
+    url: jdbc:mysql://localhost:3306/microservice_final
     username: root
-    password: root
+    password: mysql
+
   jpa:
     show-sql: true
     properties:
@@ -13,15 +20,41 @@ spring:
 
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related DockerFiles   API's!"  # QA message
+    message: "Hello, Welcome to EazyBytes Accounts related Default API'S!"
 
-contactdetails:
-  email: "support@example.com"  # QA support email
-  name: "EazyBytes Def Team"  # QA team name
-  onCallSupport: "9876543210"  # QA support number
+
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"  # Expose all management endpoints
+        include: "*"
+    info:
+      env:
+        enabled: true
+  endpoint:
+    shutdown:
+      enabled: true
+info:
+  app:
+    version: "1.0.0"
+    description: "EazyBytes Accounts Service"
+    contact:
+      email: "L1H5o@example.com"
+endpoints:
+  shutdown:
+    enabled: true
+eureka:
+  preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+  serviceUrl:
+    defaultZone: http://localhost:8070/eureka
+RabbitMQ:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+
+
