@@ -1,11 +1,28 @@
 
+spring:
+  application:
+    name: accounts
+  
+  datasource:
+    url: jdbc:mysql://localhost:3306/accountsdb  # QA database URL
+    username: root  # QA username
+    password: root  # QA password
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related Production API's!"  # QA message
+    message: "Hello, Welcome to EazyBytes Accounts related QA API's!"  # QA message
 
 contactdetails:
-  email: "dev_support@example.com"  # QA support email
-  name: "EazyBytes DEV Team"  # QA team name
+  email: "qa_support@example.com"  # QA support email
+  name: "EazyBytes QA Team"  # QA team name
   onCallSupport: "9876543210"  # QA support number
 
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose all management endpoints
