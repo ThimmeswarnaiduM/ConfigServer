@@ -1,18 +1,14 @@
 spring:
   config:
-    import: optional:configserver:http://localhost:8071/  # Optional import from config server
-
+    import: optional:configserver:http://localhost:8071/
   application:
     name: accounts
-
   profiles:
-    active: "default" # Corrected to activate the default profile
-
+    active: "prod"  # Ensure this profile exists
   datasource:
     url: jdbc:mysql://localhost:3306/microservice_final
     username: root
     password: mysql
-
   jpa:
     show-sql: true
     properties:
@@ -20,9 +16,7 @@ spring:
 
 build:
   accounts:
-    message: "Hello, Welcome to EazyBytes Accounts related Default API'S!"
-
-
+    message: "Hello, Welcome to EazyBytes Accounts related Default APIs!"
 
 management:
   endpoints:
@@ -41,20 +35,11 @@ info:
     description: "EazyBytes Accounts Service"
     contact:
       email: "L1H5o@example.com"
-endpoints:
-  shutdown:
-    enabled: true
+
 eureka:
   preferIpAddress: true
   client:
-    fetchRegistry: true
-    registerWithEureka: true
+    fetchRegistry: true  # The service will fetch the registry from Eureka
+    registerWithEureka: true  # The service will register itself with Eureka
   serviceUrl:
-    defaultZone: http://localhost:8070/eureka
-RabbitMQ:
-  host: localhost
-  port: 5672
-  username: guest
-  password: guest
-
-
+    defaultZone: http://localhost:8070/eureka  # URL of the Eureka server
