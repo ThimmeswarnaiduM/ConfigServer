@@ -1,37 +1,11 @@
-spring:
-  config:
-    import: optional:configserver:http://localhost:8071/
-  application:
-    name: gateway-server
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
-    endpoint:
-      gateway:
-        enabled: true
-cloud:
-  gateway:
-    discovery:
-      locator:
-      enabled: true
-info:
-  app:
-    name: gateway-server
-    description: "Gateway Server"
-    version: "1.0.0"
-    contact:
-      name: "Ramesh"
-      url: "http://www.ramesh.com"
 server:
   port: 8072
 
 eureka:
   instance:
-    preferIpAddress: true
+    prefer-ip-address: true # Use the IP address instead of the hostname for registration
   client:
-    fetchRegistry: true  # The service will fetch the registry from Eureka
-    registerWithEureka: true  # The service will register itself with Eureka
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka  # Eureka server UR
+    fetch-registry: true # Enable fetching of registry from Eureka
+    register-with-eureka: true # Enable this service to register with Eureka
+    service-url:
+      defaultZone: http://localhost:8070/eureka # URL of the Eureka server
