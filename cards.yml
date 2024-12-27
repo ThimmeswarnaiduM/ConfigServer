@@ -1,28 +1,26 @@
 spring:
+  config:
+    import: optional:configserver:http://localhost:8071/
   application:
     name: cards
   profiles:
-    active: "default"
-  config:
-    import:
-      - optional:configserver:http://localhost:8071/
+    active: "default"  # Ensure this profile exists or use "default"
+
   datasource:
     url: jdbc:mysql://localhost:3306/microservice_final
     username: root
     password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Explicit driver class for MySQL
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update  # Adjust to "none" or "validate" for production
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
-    sql:
-      init-mode: always
-
-server:
-  port: 8081
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect  # Update for MySQL 8+
 
 build:
-  cards:
-    message: "Hello, Welcome to EazyBytes Cards related Default API's!"
+  accounts:
+    message: "Hello, Welcome to EazyBytes Accounts related Default APIs!"
 
 management:
   endpoints:
@@ -38,21 +36,19 @@ management:
 
 info:
   app:
+    name: "cards Service"
     version: "1.0.0"
     description: "EazyBytes Accounts Service"
     contact:
       email: "L1H5o@example.com"
 
 eureka:
-  preferIpAddress: true
+  instance:
+    preferIpAddress: true
   client:
-    fetchRegistry: true
-    registerWithEureka: true
-  serviceUrl:
-    default: http://localhost:8070/eureka
-
-RabbitMQ:
-  host: localhost
-  port: 5672
-  username: guest
-  password: guest
+    fetchRegistry: true  # The service will fetch the registry from Eureka
+    registerWithEureka: true  # The service will register itself with Eureka
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka  # Eureka server URL
+server:
+  port: 8081
