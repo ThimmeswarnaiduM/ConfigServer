@@ -1,31 +1,51 @@
 spring:
   config:
-    import: optional:configserver:http://configserver:8071/  # Use Docker service name
+    import: "optional:configserver:http://localhost:8071/"
   application:
     name: accounts
   profiles:
-    active: default
-  datasource:
-    url: jdbc:mysql://localhost:3306/microservice_final
-    username: root
-    password: mysql
-    driver-class-name: com.mysql.cj.jdbc.Driver  # Explicit driver class for MySQL
-    jpa:
-      show-sql: true
-      hibernate:
-        ddl-auto: update  # Adjust to "none" or "validate" for production
-      properties:
-        hibernate.dialect: org.hibernate.dialect.MySQL8Dialect  # Update for MySQL 8+
+    active: "default"  # Ensure this profile exists
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/accountsdb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Optional unless troubleshooting
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update  # Adjust to "none" or "validate" for production
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+
+build:
+  accounts:
+    message: "Hello, Welcome to EazyBytes Accounts related Default APIs!"
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+    info:
+      env:
+        enabled: true
   endpoint:
     shutdown:
       enabled: true
+
+cloud:
+  openfeign:
+    circuitbreaker:
+      enabled: true
+
+resilience4jcircuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      waitDurationInOpenState: 10000
+      failureRateThreshold: 50
+      permittedNumberOfCallsInHalfOpenState: 2
 
 info:
   app:
@@ -33,7 +53,7 @@ info:
     version: "1.0.0"
     description: "EazyBytes Accounts Service"
     contact:
-      email: "L1H5o@example.com"
+      email: "example@example.com"
 
 eureka:
   instance:
@@ -42,4 +62,13 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://eureka:8070/eureka  # Use Eureka service name
+      defaultZone: http://localhost:8070/eureka
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com:
+      eazybytes:
+        accounts: DEBUG
