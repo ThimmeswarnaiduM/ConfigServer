@@ -1,15 +1,15 @@
 spring:
   config:
-    import: optional:configserver:http://localhost:8071/
+    import: "optional:configserver:http://localhost:8071/"
   application:
     name: cards
   profiles:
     active: "default"  # Ensure this profile exists or use "default"
 
   datasource:
-    url: jdbc:mysql://localhost:3306/microservice_final
+    url: jdbc:mysql://localhost:3306/cardsdb
     username: root
-    password: mysql
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver  # Explicit driver class for MySQL
   jpa:
     show-sql: true
@@ -52,3 +52,8 @@ eureka:
       defaultZone: http://localhost:8070/eureka  # Eureka server URL
 server:
   port: 8081
+logging:
+  level:
+    com:
+      eazybytes:
+        cards: DEBUG  # Ensure the indentation is correct here
